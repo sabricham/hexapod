@@ -20,8 +20,8 @@
 //   Private variables & defines
 //======================================================================================
 
-QueueHandle_t ledQueue = NULL;
-queueMessage ledQueueMessage;
+QueueHandle_t motorQueue = NULL;
+queueMessage motorQueueMessage;
 
 //====================================================================================== 
 //   Private functions & routines
@@ -39,7 +39,7 @@ void MotorController(void *pvParameters)
     ESP_LOGW(TAG, "Starting task");
 
     esp_task_wdt_add(NULL);
-    CreateQueue(&ledQueue, &ledQueueMessage, 3, TAG);
+    CreateQueue(&motorQueue, &motorQueueMessage, 3, TAG);
 
     ESP_LOGW(TAG, "Task started correctly");
     //======================================================================================
@@ -48,7 +48,7 @@ void MotorController(void *pvParameters)
     while(1)
     {
         // Get messages from other tasks
-        if(xQueueReceive(ledQueue, &ledQueueMessage, 0))
+        if(xQueueReceive(motorQueue, &motorQueueMessage, 0))
         {
             ESP_LOGI(TAG, "Received message");
         }
