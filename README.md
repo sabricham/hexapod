@@ -5,10 +5,13 @@ Hexapod spider robot project
 
 ```
 Hexapod/
-├── src/                # Source files for the hexapod robot
-├── docs/               # Documentation files
-├── lib/                # Libraries and dependencies
-└── assets/             # Media assets like images and videos
+├── src/                    # Source files for the hexapod robot
+│   ├── motorController/    # Motor controller component
+│   ├── utility/            # Utility functions and scripts
+├── docs/                   # Documentation files
+│   ├── datasheets/         # Datasheets for components
+│   ├── media/              # Media files like images and videos
+├── lib/                    # Libraries and dependencies
 ```
 
 ## Useful Links
