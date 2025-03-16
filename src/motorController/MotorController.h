@@ -24,6 +24,9 @@
 #include "gpioHandler.h"
 #include "queueHandler.h"
 #include "taskHandler.h"
+#include "i2cHandler.h"
+
+#include "PCA9685.h"
 
 //====================================================================================== 
 //   Macros

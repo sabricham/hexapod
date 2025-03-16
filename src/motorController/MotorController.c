@@ -16,6 +16,8 @@
 
 #define TAG             "Motor Controller"
 
+#define PCA9685_ADDRESS     0x40
+
 //====================================================================================== 
 //   Private variables & defines
 //======================================================================================
@@ -41,9 +43,16 @@ void MotorController(void *pvParameters)
     esp_task_wdt_add(NULL);
     CreateQueue(&motorQueue, &motorQueueMessage, 3, TAG);
 
+    I2CInit();
+    
+    //Example of PCA9685 usage
+    PCA9685Init();
+    PCA9685SetFrequency(48);    // Sets to actual 50Hz   
+    PCA9685SetAllDutyCycle(10);
+    PCA9685SetDutyCycle(LED7, 30);
+
     ESP_LOGW(TAG, "Task started correctly");
     //======================================================================================
-
     
     while(1)
     {

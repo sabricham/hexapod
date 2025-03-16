@@ -20,6 +20,15 @@
         "freertos.h": "c",
         "queue.h": "c",
         "gpiohandler.h": "c",
-        "queuehandler.h": "c"
+        "queuehandler.h": "c",
+        "task.h": "c",
+        "array": "c",
+        "bitset": "c",
+        "string_view": "c",
+        "format": "c",
+        "initializer_list": "c",
+        "span": "c",
+        "regex": "c",
+        "PCA9685.C": "cpp"
     }
 }
